@@ -1,0 +1,28 @@
+.player2InputForm {
+  display:none;
+}
+.player3InputForm {
+  display:none;
+}
+.characters {
+  display:none;
+}
+
+#startGameBtn {
+  display:none;
+}
+
+.gamePlayBox {
+  display:none;
+}
+
+.characters {
+  background-color: rgba(0, 0, 0, 0.2);
+  height: 100%;
+  position: fixed;
+  float: left;
+}
+
+.taskDisplay {
+  float: right;
+}

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <title></title>
+</head>
+<body>
+
+  <form class="player1InputForm" action="index.html" method="post">
+    <label for="name">Character Name:</label>
+    <input type="text" id="characterName1">
+    <label><input type="radio" name="character1Class" value="hacker" checked> Hacker</label>
+    <label><input type="radio" name="character1Class" value="SafeCracker"> Safe Cracker</label>
+    <label><input type="radio" name="character1Class" value="social"> Social Engineer</label>
+    <button type="button" class="player1Roll1">Click here to roll for first attribute</button>
+    <button type="button" class="player1Roll2">Click here to roll for second attribute</button>
+    <!-- note: players can cheat by rolling multiple times -->
+    <button type="button" id="player1create">Make Character</button>
+  </form>
+  <form class="player2InputForm" action="index.html" method="post">
+    <label for="name">Character Name:</label>
+    <input type="text" id="characterName2">
+    <label><input type="radio" name="character2Class" value="hacker" checked> Hacker</label>
+    <label><input type="radio" name="character2Class" value="SafeCracker"> Safe Cracker</label>
+    <label><input type="radio" name="character2Class" value="social"> Social Engineer</label>
+    <button type="button" class="player2Roll1">Click here to roll for first attribute</button>
+    <button type="button" class="player2Roll2">Click here to roll for second attribute</button>
+    <!-- note: players can cheat by rolling multiple times -->
+    <button type="button" id="player2create">Make Character</button>
+  </form>
+  <form class="player3InputForm" action="index.html" method="post">
+    <label for="name">Character Name:</label>
+    <input type="text" id="characterName3">
+    <label><input type="radio" name="character3Class" value="hacker" checked> Hacker</label>
+    <label><input type="radio" name="character3Class" value="SafeCracker"> Safe Cracker</label>
+    <label><input type="radio" name="character3Class" value="social"> Social Engineer</label>
+    <button type="button" class="player3Roll1">Click here to roll for first attribute</button>
+    <button type="button" class="player3Roll2">Click here to roll for second attribute</button>
+    <!-- note: players can cheat by rolling multiple times -->
+    <button type="button" id="player3create">Make Character</button>
+  </form>
+  <div class="objectives">
+    <p id="objectiveText"></p>
+  </div>
+
+  <button type="button" id="startGameBtn">Start Game</button>
+
+  <div class="container">
+    <div class="gamePlayBox">
+      <div class="characters">
+        <div class="player1">
+          <button type="button" name="button" id="player1action">Try to beat the task</button>
+        </div>
+        <div class="player2">
+          <button type="button" name="button" id="player2action">Try to beat the task</button>
+        </div>
+        <div class="player3">
+          <button type="button" name="button" id="player3action">Try to beat the task</button>
+        </div>
+      </div>
+      <div class="taskDisplay">
+        <h3 id="taskNameDisplay">Convince the guards</h3>
+        <p id="taskTextDisplay">Talk to the guards and convince them to let you in</p>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
