@@ -24,6 +24,8 @@ $(document).ready(function(){
   let p3Roll1 = -5;
   let p3Roll2 = -5;
   let type;
+  let chosenPlayer;
+
 
   $(".player1Roll1").click(function() {
     p1Roll1 = tenSided.rollDice();
@@ -95,12 +97,23 @@ $(document).ready(function(){
   });
 
   // Gameplay
-  function playGame(newParty) {
+  // Select Players
+  $("div.characters").on("click", "button", function() {
+    chosenPlayer = newParty.playerArray[parseInt(this.id)];
+  });
 
+
+  $('#runTaskBtn').click(function(){
+    let result;
     const task1 = new Task("cha", 20);
-    
-
-  }
+    result = task1.skillCheck(chosenPlayer, sixSided.rollDice());
+    if (result === true){
+      console.log("You win!");
+    }
+    else {
+      console.log("Too bad");
+    }
+  });
 
 
 });
