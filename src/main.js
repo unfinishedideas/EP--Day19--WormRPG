@@ -13,6 +13,13 @@ $(document).ready(function(){
   const tenSided = new DiceRoller(10);
   const newParty = new Party();
 
+  const task1 = new Task("cha", 15, "Convince guards", "Convince the bank security to let you in");
+  const task2 = new Task("dex", 19, "Break in", "Pick the lock and enter the building");
+  const task3 = new Task("tech", 20, "Hack computer", "Access admin account on computer and wire transfer money");
+  const task4 = new Task("dex", 10, "Escape", "Escape the building without detection");
+
+  const taskArray = [task1, task2, task3, task4];
+
   // Getting Characters
   let player1;
   let player2;
@@ -25,7 +32,7 @@ $(document).ready(function(){
   let p3Roll2 = -5;
   let type;
   let chosenPlayer;
-
+  let currentTask = 0;
 
   $(".player1Roll1").click(function() {
     p1Roll1 = tenSided.rollDice();
@@ -102,18 +109,29 @@ $(document).ready(function(){
     chosenPlayer = newParty.playerArray[parseInt(this.id)];
   });
 
-
   $('#runTaskBtn').click(function(){
-    let result;
-    const task1 = new Task("cha", 20);
-    result = task1.skillCheck(chosenPlayer, sixSided.rollDice());
-    if (result === true){
-      console.log("You win!");
-    }
-    else {
-      console.log("Too bad");
-    }
+    const task = taskArray[currentTask];
+    runTask(task, chosenPlayer);
+    updateScreens();
   });
+
+  function runTask(task, chosenPlayer){
+    let result = task.skillCheck(chosenPlayer, sixSided.rollDice());
+    console.log(result);
+    if (result === false){
+      newParty.funds -= 50;
+      $("#results").text("Too bad. Try again");
+    } else if (result === true) {
+      currentTask++;
+      $("#results").text("Success");
+    }
+  }
+
+  function updateScreens(){
+    $("#taskNameDisplay").text(taskArray[currentTask].name);
+    $("#taskTextDisplay").text(taskArray[currentTask].description);
+    $("#selectedPlayer").text(chosenPlayer.name);
+  }
 
 
 });

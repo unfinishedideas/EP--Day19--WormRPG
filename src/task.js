@@ -1,7 +1,9 @@
 export class Task {
-  constructor(statUsed, difficulty){
+  constructor(statUsed, difficulty, name, description){
     this.statUsed = statUsed;
     this.difficulty = difficulty;
+    this.name = name;
+    this.description = description;
   }
   skillCheck(player, roll){
     let playerSkill;
