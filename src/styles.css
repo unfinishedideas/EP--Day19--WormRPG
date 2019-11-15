@@ -21,8 +21,18 @@
   height: 100%;
   position: fixed;
   float: left;
+  padding: 30px;
 }
 
 .taskDisplay {
   float: right;
+}
+
+.results {
+  /* float: right; */
+}
+
+body {
+  font-family: 'Bebas Neue', cursive;
+  font-size: 25px;
 }

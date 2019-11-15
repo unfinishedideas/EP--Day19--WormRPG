@@ -107,6 +107,8 @@ $(document).ready(function(){
   // Select Players
   $("div.characters").on("click", "button", function() {
     chosenPlayer = newParty.playerArray[parseInt(this.id)];
+    updateScreens();
+    $(this).css("background-color", "rgba(0, 150, 20, 0.5)");
   });
 
   $('#runTaskBtn').click(function(){
@@ -117,7 +119,6 @@ $(document).ready(function(){
 
   function runTask(task, chosenPlayer){
     let result = task.skillCheck(chosenPlayer, sixSided.rollDice());
-    console.log(result);
     if (result === false){
       newParty.funds -= 50;
       $("#results").text("Too bad. Try again");
@@ -130,7 +131,7 @@ $(document).ready(function(){
   function updateScreens(){
     $("#taskNameDisplay").text(taskArray[currentTask].name);
     $("#taskTextDisplay").text(taskArray[currentTask].description);
-    $("#selectedPlayer").text(chosenPlayer.name);
+    $(".btnColor").css("background-color", "white");
   }
 
 
